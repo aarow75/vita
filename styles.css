@@ -44,3 +44,7 @@ th span {
     color: #777;
     text-transform: capitalize;
 }
+
+.hide {
+    display: none;
+}

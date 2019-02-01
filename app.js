@@ -27,8 +27,17 @@ function columnText(id, json) {
     let version = json[id].version ? '<br><span>[' + json[id].version + ']</span><br>' : '';
     let edition = json[id].edition ? '(' + json[id].edition + ')<br>' : '';
     let manuscripts = json[id].manuscripts ? json[id].manuscripts + ' manuscripts' : '';
-    let allText = `${title} ${version} ${edition} ${manuscripts}`
+    let allText = `${title} ${version} ${edition} ${manuscripts} <br><a href="javascript:toggleVis('${id}')">hide</a>`;
     document.querySelector('[data-column=' + id + ']').innerHTML = allText;
+}
+
+function toggleVis(id) {
+    console.log( document.querySelectorAll("[data-column='" + id + "']") )
+    document.querySelectorAll("[data-column='" + id + "']").forEach(f => f.classList.toggle('hide'));
+}
+
+function showAll() {
+    document.querySelectorAll("[data-column]").forEach(f => f.classList.remove("hide"));
 }
 
 loadJSON(function(json) {
@@ -46,12 +55,12 @@ loadJSON(function(json) {
 loadJSON(function(json) {
     for (let i = 0; i < json.pericopes.length; i++) {
         let pericope = `
-      <tr><th colspan="6" class="title">${json.pericopes[i]["title"]}</th></tr>
+      <tr><th colspan="6" class="title">[${json.pericopes[i]["id"]}] ${json.pericopes[i]["title"]}</th></tr>
       <tr class="pericope" pericope-id="${json.pericopes[i]["id"]}">
         <td data-column="LAT" class="source"></td>
         <td data-column="GRE" class="source"></td>
-        <td data-column="GEO" class="source"></td>
         <td data-column="SLA" class="source"></td>
+        <td data-column="GEO" class="source"></td>
         <td data-column="ARM" class="source"></td>
         <td data-column="BIB" class="source"></td>
         <td data-column="REF" class="source"></td>
