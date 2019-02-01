@@ -1,0 +1,2 @@
+# The Synoptic "Life of Adam and Eve"
+With comparisons to the Latin, Greek, Armenian, Georgian, and Slavonic. Also including cross references to the 1 Book of Enoch, Book of Jubilees, and LDS Book of Abraham and Book of Moses. Other comparisons with the Syriac Cave of Treasures, Koran, and various targums and midrash.

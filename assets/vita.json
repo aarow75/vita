@@ -1,0 +1,13 @@
+{
+  "title": "The Synoptic Life of Adam and Eve",
+  "GEO": {"version": "georgian", "title": "Book of Adam", "manuscripts": "5", "edition": "1962,1981"},
+  "GRE": {"version": "greek", "title": "The Apocalypse of Adam", "manuscripts": "25", "edition": "1974"},
+  "LAT": {"version": "latin", "title": "Vita Adae et Evae", "manuscripts": "73", "edition": "1878"},
+  "SLA": {"version": "slavonic", "title": "Life of Adam and Eve", "manuscripts": "2", "edition": "1893"},
+  "ARM": {"version": "armenian", "title": "Penitence of Adam", "manuscripts": "3", "edition": "1981"},
+  "COP": {"version": "coptic", "title": "", "manuscripts": "small fragment", "edition": "1909"},
+  "SYR": {"version": "syriac", "title": "Cave of Treasures", "manuscripts": "19", "edition": "1927,1987"},
+  "ETH": {"version": "ethiopic", "title": "The Conflict of Adam and Eve", "manuscripts": "", "edition": "1882"},
+  "BIB": {"version": "bible", "title": "NRSV Genesis"},
+  "REF": {"version": "references", "title": "Cross references to New Testament, 1 Enoch, and LDS Book of Moses and Book of Abraham"}
+}
