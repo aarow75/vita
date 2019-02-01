@@ -1,42 +1,46 @@
-html, body {
-  font-family: sans-serif;
-  font-size: 14px;
+html,
+body {
+    font-family: sans-serif;
+    font-size: 14px;
 }
-th, td {
-  border: solid 1px #ccc;
-  padding: 4px;
+
+th,
+td {
+    border: solid 1px #ccc;
+    padding: 4px;
 }
 
 .pericopes {
-  border-collapse: collapse;
-
+    border-collapse: collapse;
 }
 
-.source, thead th {
-  width: 14.285%;
-  vertical-align: top;
+.source,
+thead th {
+    line-height: 1.4em;
+    vertical-align: top;
+    width: 14.285%;
 }
 
 .pericopes th {
-  text-align: left;
+    text-align: left;
 }
 
 .title {
-  font-weight: 700;
-  margin-top: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
 .source b {
-  display: none;
-  /* visibility: hidden; */
+    /* display: none; */
+    /* visibility: hidden; */
 }
 
 .source b:before {
-  content: ' ';
-  display: block;
+    content: ' ';
+    display: block;
 }
 
 th span {
-  color: #777;
-  text-transform: capitalize;
+    color: #777;
+    text-transform: capitalize;
 }
