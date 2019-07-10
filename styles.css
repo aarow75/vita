@@ -48,3 +48,7 @@ th span {
 .hide {
     display: none;
 }
+
+.highlight {
+    background-color: yellow;
+}
