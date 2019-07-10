@@ -47,8 +47,11 @@ function toggleVis(id) {
     document.querySelectorAll("[data-column='" + id + "']").forEach(f => f.classList.toggle('hide'));
 }
 
-function showAll() {
+function showAllColumns() {
     document.querySelectorAll("[data-column]").forEach(f => f.classList.remove("hide"));
+}
+function toggleAllPericopes() {
+    document.querySelectorAll(".pericope").forEach(f => f.classList.toggle("hide"));
 }
 
 function lineIdMouseover(target) {
@@ -64,6 +67,10 @@ function lineIdMouseout(target) {
 function mouseEvents() {
     document.querySelectorAll("[line-id]").forEach(f => f.addEventListener("mouseover", e => lineIdMouseover(e.target)));
     document.querySelectorAll("[line-id]").forEach(f => f.addEventListener("mouseout", e => lineIdMouseout(e.target)));
+}
+
+function clickEvents() {
+    document.querySelectorAll('.title').forEach(f => f.addEventListener("click", e => ((e.target.parentNode).nextElementSibling).classList.toggle("hide")));
 }
 
 // loads page and column titles and info
@@ -83,8 +90,8 @@ loadJSON(function(json) {
     // creates the pericope headings
     for (let i = 0; i < json.pericopes.length; i++) {
         let pericope = `
-      <tr><th colspan="6" class="title">[${json.pericopes[i]["id"]}] ${json.pericopes[i]["title"]}</th></tr>
-      <tr class="pericope" pericope-id="${json.pericopes[i]["id"]}">
+      <tr><th colspan="7" class="title">[${json.pericopes[i]["id"]}] ${json.pericopes[i]["title"]}</th></tr>
+      <tr class="pericope hide" pericope-id="${json.pericopes[i]["id"]}">
         <td data-column="GRE" class="source"></td>
         <td data-column="SLA" class="source"></td>
         <td data-column="LAT" class="source"></td>
@@ -109,3 +116,4 @@ loadJSON(function(json) {
 }, './assets/pericope.json');
 
 setTimeout(mouseEvents, 2000);
+setTimeout(clickEvents, 2000);

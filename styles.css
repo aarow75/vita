@@ -3,7 +3,12 @@ body {
     font-family: sans-serif;
     font-size: 14px;
 }
-
+a, .title {
+    color: rgb(0, 0, 238);
+    color:-webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
 th,
 td {
     border: solid 1px #ccc;
@@ -12,6 +17,7 @@ td {
 
 .pericopes {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .source,
