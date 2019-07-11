@@ -1,0 +1,26 @@
+{
+    "name": "vita",
+    "version": "1.0.0",
+    "description": "With comparisons to the Latin, Greek, Armenian, Georgian, and Slavonic. Also including cross references to the 1 Book of Enoch, Book of Jubilees, and LDS Book of Abraham and Book of Moses. Other comparisons with the Syriac Cave of Treasures, Koran, and various targums and midrash.",
+    "main": "app.js",
+    "scripts": {
+        "start": "webpack-dev-server --hot"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aarow75/vita.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aarow75/vita/issues"
+    },
+    "homepage": "https://github.com/aarow75/vita#readme",
+    "devDependencies": {
+        "@webpack-cli/init": "^0.2.2",
+        "@webpack-cli/serve": "^0.1.8",
+        "webpack": "^4.35.3",
+        "webpack-cli": "^3.3.5"
+    }
+}
