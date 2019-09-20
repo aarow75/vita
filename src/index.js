@@ -26,9 +26,23 @@ function getSource(name, abbr) {
         */
         for (let i = 0; i < json.length; i++) {
             let id = json[i]["id"];
-            let regex = /\<b\>(.?\d\..?\d.?[a-z]{0,1})\<\/b\>/; // we will grab the second index
-            let content = Array.isArray(json[i]["content"]) ? json[i]["content"].map(f => f.match(regex) ? "<span line-id='" + f.match(regex)[1] + "'>" + f + "</span>" : f).join(" ") : json[i]["content"];
-            document.querySelector(`.pericope[pericope-id='${id}'] *[data-column='${abbr}']`).innerHTML = content;
+            let container = document.querySelector(`.pericope[pericope-id='${id}'] *[data-column='${abbr}']`);
+            let linenum = /\<b\>(.?\d\..?\d.?[a-z]{0,1})\<\/b\>/; // we will grab the second index
+            let sublines = /[a-z]/;
+            let content = "";
+            if (Array.isArray(json[i]["content"])) {
+                // if it's got a line number in the content, wrap it and give it an id so we can target it better
+                // if it doesn't have a line number, lets mark it out so we know what we need to update
+                content = json[i]["content"].map(f => {
+                    if (f.match(linenum)) {
+                        return `<span line-id='${f.match(linenum)[1].replace(sublines,'')}'>${f}</span>`
+                    }
+                    return `<span class="no-line-nums">${f}</span>`;
+                }).join(" ")
+            } else {
+                content = `<span class="no-line-nums">${json[i]["content"]}</span>`;
+            }
+            container.innerHTML = content;
         }
     }, './assets/' + name + '.json');
 }
@@ -55,12 +69,12 @@ function toggleAllPericopes() {
 }
 
 function lineIdMouseover(target) {
-    console.log("lineIdMouseover",target)
+    // console.log("lineIdMouseover",target)
     document.querySelectorAll(`[line-id='${target.getAttribute("line-id")}']`).forEach(f => f.classList.toggle("highlight"));
 }
 
 function lineIdMouseout(target) {
-    console.log("lineIdMouseover",target)
+    // console.log("lineIdMouseover",target)
     document.querySelectorAll(`[line-id='${target.getAttribute("line-id")}']`).forEach(f => f.classList.remove("highlight"));
 }
 

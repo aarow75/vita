@@ -58,3 +58,7 @@ th span {
 .highlight {
     background-color: yellow;
 }
+
+.no-line-nums {
+    background-color: pink;
+}

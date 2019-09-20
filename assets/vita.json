@@ -7,7 +7,7 @@
   "ARM": {"version": "armenian", "title": "Penitence of Adam", "manuscripts": "3", "edition": "1981"},
   "COP": {"version": "coptic", "title": "", "manuscripts": "small fragment", "edition": "1909"},
   "SYR": {"version": "syriac", "title": "Cave of Treasures", "manuscripts": "19", "edition": "1927,1987"},
-  "ETH": {"version": "ethiopic", "title": "The Conflict of Adam and Eve", "manuscripts": "", "edition": "1882"},
+  "ETH": {"version": "ethiopic", "title": "The Conflict of Adam and Eve (The First Book of Adam and Eve)", "manuscripts": "", "edition": "1882"},
   "BIB": {"version": "bible", "title": "NRSV Genesis"},
   "REF": {"version": "references", "title": "Cross references to New Testament, 1 Enoch, and LDS Book of Moses and Book of Abraham"}
 }
