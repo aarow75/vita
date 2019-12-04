@@ -90,11 +90,13 @@ function clickEvents() {
 // loads page and column titles and info
 loadJSON(function(json) {
     document.querySelector('#title').innerHTML = json.title;
-    columnText("GEO", json);
-    columnText("LAT", json);
     columnText("GRE", json);
     columnText("SLA", json);
+    columnText("LAT", json);
+    columnText("GEO", json);
     columnText("ARM", json);
+    columnText("SYR", json);
+    columnText("ETH", json);
     columnText("BIB", json);
     columnText("REF", json);
 }, './assets/vita.json');
@@ -104,13 +106,15 @@ loadJSON(function(json) {
     // creates the pericope headings
     for (let i = 0; i < json.pericopes.length; i++) {
         let pericope = `
-      <tr><th colspan="7" class="title">[${json.pericopes[i]["id"]}] ${json.pericopes[i]["title"]}</th></tr>
+      <tr><th colspan="9" class="title">[${json.pericopes[i]["id"]}] ${json.pericopes[i]["title"]}</th></tr>
       <tr class="pericope hide" pericope-id="${json.pericopes[i]["id"]}">
         <td data-column="GRE" class="source"></td>
         <td data-column="SLA" class="source"></td>
         <td data-column="LAT" class="source"></td>
         <td data-column="GEO" class="source"></td>
         <td data-column="ARM" class="source"></td>
+        <td data-column="SYR" class="source"></td>
+        <td data-column="ETH" class="source"></td>
         <td data-column="BIB" class="source"></td>
         <td data-column="REF" class="source"></td>
       </tr>
@@ -120,11 +124,13 @@ loadJSON(function(json) {
     }
 
     // loads the manuscript's JSON file into the appropriate columns under the proper pericope section
-    getSource("latin", "LAT");
-    getSource("armenian", "ARM");
-    getSource("georgian", "GEO");
     getSource("greek", "GRE");
     getSource("slavonic", "SLA");
+    getSource("latin", "LAT");
+    getSource("georgian", "GEO");
+    getSource("armenian", "ARM");
+    getSource("cave", "SYR");
+    getSource("ethiopic", "ETH");
     getSource("bible", "BIB");
     getSource("references", "REF");
 }, './assets/pericope.json');
